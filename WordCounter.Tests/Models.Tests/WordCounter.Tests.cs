@@ -14,10 +14,22 @@ namespace Game.Test
             //Arrange
             
             //Act
-            bool input= WordCount.RepeatCounter("and");
+            bool input= WordCount.SetValue("and");
             //Assert
             Assert.AreEqual(true, input);
             
+        }
+        [TestMethod]
+        public void WordCounter_WhenUserEntersWordWillItCountTheWordOccurances_And_1()
+        {
+            //Arrange
+            string WordInput= "and";
+            string SentenceInput = "And then";
+            //Act
+            int Counter = WordCount.RepeatCounter( WordInput,SentenceInput);
+            //Assert
+            Assert.AreEqual(true, Counter);
+
         }
     }
 }   

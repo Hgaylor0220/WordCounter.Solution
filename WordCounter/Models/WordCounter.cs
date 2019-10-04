@@ -4,13 +4,25 @@ namespace Game.Models
 {
     public class WordCount
     {
-        public static string Input{get; set;}
+        public static string WordInput{get; set;}
+        public static string SentenceInput {get; set;}
         static int Counter = 0;
 
-        public static bool RepeatCounter(string input)
+        public void SetValue(string word, string sentence)
         {
-            Input = input;
-            return true;
+            WordInput = word;
+            SentenceInput = sentence;
+            
+        }
+        
+        public static int RepeatCounter(string word,string sentence)
+        {
+            Counter = 0;
+            if(word == sentence)
+            {
+                Counter ++;
+            }
+            return Counter;
         }
     }
 }
