@@ -5,21 +5,19 @@ using System;
 namespace Game.Test
 {
     [TestClass]
-    public class WordCountTest : IDisposable
+    public class WordCountTest
     {
-        public void Dispose()
-        {
-            WordCount.ClearAll();
-        }
-
+      
         [TestMethod]
         public void WordCounter_CanUserEnterAWord_And()
         {
             //Arrange
             
             //Act
-            bool input= WordCount.RepeatCounter("and")
+            bool input= WordCount.RepeatCounter("and");
             //Assert
-            Assert.AreEqual(and, true);
+            Assert.AreEqual(true, input);
             
         }
+    }
+}   

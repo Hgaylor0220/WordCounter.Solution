@@ -6,6 +6,12 @@ namespace Game.Models
     {
         public static string Input{get; set;}
         static int Counter = 0;
+
+        public static bool RepeatCounter(string input)
+        {
+            Input = input;
+            return true;
+        }
     }
 }
 
