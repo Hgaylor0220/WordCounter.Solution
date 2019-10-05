@@ -14,7 +14,7 @@ namespace Game.Test
             //Arrange
 
             //Act
-            bool input = WordCount.SetValue("and", "and then");
+            bool input = WordCount.SetValue("hello", "and then");
             //Assert
             Assert.AreEqual(true, input);
             
@@ -23,13 +23,14 @@ namespace Game.Test
         public void WordCounter_WhenUserEntersWordWillItCountTheWordOccurances_And_1()
         {
             //Arrange
-            char[] WordInput = word.ToCharArray("and");
-            char[] SentenceInput = sentence.ToCharArray("And then and");
-            //Act
-            int Counter = WordCount.RepeatCounter( WordInput,SentenceInput);
-            //Assert
-            Assert.AreEqual(2, Counter);
+            string WordInput= "like";
+            string SentenceInput = "um like I totally like pizza like a lot";
 
+            //Act
+            bool input = WordCount.SetValue(WordInput, SentenceInput);
+            int Counter = WordCount.RepeatCounter(WordInput, SentenceInput);
+            //Assert
+            Assert.AreEqual(3, Counter);
         }
     }
 }   
