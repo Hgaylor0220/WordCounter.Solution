@@ -8,12 +8,14 @@ namespace Game.Models
         public static string SentenceInput {get; set;}
         static int Counter = 0;
 
-        public void SetValue(string word, string sentence)
+        public static bool SetValue(string word,string sentence)
         {
             WordInput = word;
             SentenceInput = sentence;
+            return true;
             
         }
+        
         
         public static int RepeatCounter(string word,string sentence)
         {

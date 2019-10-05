@@ -12,9 +12,9 @@ namespace Game.Test
         public void WordCounter_CanUserEnterAWord_And()
         {
             //Arrange
-            
+
             //Act
-            bool input= WordCount.SetValue("and");
+            bool input = WordCount.SetValue("and", "and then");
             //Assert
             Assert.AreEqual(true, input);
             
@@ -28,7 +28,7 @@ namespace Game.Test
             //Act
             int Counter = WordCount.RepeatCounter( WordInput,SentenceInput);
             //Assert
-            Assert.AreEqual(true, Counter);
+            Assert.AreEqual(1, Counter);
 
         }
     }
