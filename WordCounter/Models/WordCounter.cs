@@ -6,20 +6,21 @@ namespace Game.Models
     {
         public static string WordInput{get; set;}
         public static string SentenceInput {get; set;}
-        static int Counter = 0;
+        static int Counter;
 
         public static bool SetValue(string word,string sentence)
         {
-            WordInput = word;
-            SentenceInput = sentence;
+            char [] WordInput = word.ToCharArray();
+            char [] SentenceInput = sentence.ToCharArray();
             return true;
-            
+
         }
         
-        
-        public static int RepeatCounter(string word,string sentence)
+        public static int RepeatCounter(char word,char sentence)
         {
-            Counter = 0;
+            Counter =0;
+            WordCount.SetValue( WordInput, SentenceInput);
+            foreach(char WordInput in SentenceInput)
             if(word == sentence)
             {
                 Counter ++;

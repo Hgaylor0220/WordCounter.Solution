@@ -23,12 +23,12 @@ namespace Game.Test
         public void WordCounter_WhenUserEntersWordWillItCountTheWordOccurances_And_1()
         {
             //Arrange
-            string WordInput= "and";
-            string SentenceInput = "And then";
+            char[] WordInput = word.ToCharArray("and");
+            char[] SentenceInput = sentence.ToCharArray("And then and");
             //Act
             int Counter = WordCount.RepeatCounter( WordInput,SentenceInput);
             //Assert
-            Assert.AreEqual(1, Counter);
+            Assert.AreEqual(2, Counter);
 
         }
     }
