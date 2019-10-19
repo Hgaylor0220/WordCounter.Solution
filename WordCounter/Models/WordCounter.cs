@@ -1,23 +1,36 @@
 using System;
 
-namespace Game.Models
+namespace WordCounter.Models
 {
-    public class WordCount
+    
+    public class RepeatCounter
     {
-        public static string wordInput{get; set;}
-        public static string sentenceInput {get; set;}
-        static int Counter = 0;
-        public static bool SetValue(string word,string sentence)
-        {
-            wordInput = word;
-            sentenceInput = sentence;
-            return true;
+        public string UserWord{get; set;}
+        public string Sentence {get; set;}
 
+
+        public RepeatCounter(string word, string sentence)
+        {
+            UserWord = word;
+            Sentence = sentence;
         }
         
-        public static int RepeatCounter(string word, string sentenceInput)
+        public int WordCount()
         {
-            return sentenceInput.Split(wordInput).Length - 1;
+            int Count=0;
+            UserWord.ToLower();
+
+            foreach(var word in Sentence)
+            {
+                if(word == word)
+                {
+                Count ++;
+                
+                }
+            }
+                return Count;
         }
+
+
     }
 }
