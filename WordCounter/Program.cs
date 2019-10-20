@@ -1,12 +1,12 @@
-﻿// using System;
+﻿using System;
 
-// namespace WordCounter
-// {
-//     class Program
-//     {
-//         static void Main(string[] args)
-//         {
-//             Console.WriteLine("Hello World!");
-//         }
-//     }
-// }
+namespace Counter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}

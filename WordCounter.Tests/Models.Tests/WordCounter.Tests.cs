@@ -1,8 +1,8 @@
+using Counter.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WordCounter.Models;
 using System;
 
-namespace WordCounter.Tests
+namespace Counter.Tests
 {
     [TestClass]
     public class RepeatCounter
@@ -27,13 +27,47 @@ namespace WordCounter.Tests
 
             //Create a variable for the actual count by calling the method
             //Our method should be written to return an int and NOT be static
-            int actual = testCounter.WordCount();
+            int actual = testRepeatCounter.WordCount();
 
             //Assert
 
             //Test whether the actual count that we got matches the expected count of 2
             Assert.AreEqual(expected, actual);
         }
-      
+
+
+        [TestMethod]
+        public void RepeatCounter_CountsWordsInUpperOrLower_Int()
+        {
+            //This method will test if our repeat Counter can count words in upper and lower case.
+
+            //Arrange
+            RepeatCounter testRepeatCounter = new RepeatCounter("Hi", "Hi, im hailey. Say hi to your mother for me");
+
+            //Act
+            int expected = 2;
+            int actual = testRepeatCounter.WordCount();
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void RepeatCounter_CountsWordsRegardlessOfPunctuation_Int()
+        {
+            //This method will test if our repeat Counter can count words regardless of punctuation .
+
+            //Arrange
+            RepeatCounter testRepeatCounter = new RepeatCounter("Hello", "Hello, im hailey. Say hello to your mother for me");
+
+            //Act
+            int expected = 2;
+            int actual = testRepeatCounter.WordCount();
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }   

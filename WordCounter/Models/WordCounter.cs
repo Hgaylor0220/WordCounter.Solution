@@ -1,6 +1,4 @@
-using System;
-
-namespace WordCounter.Models
+namespace Counter.Models
 {
     
     public class RepeatCounter
