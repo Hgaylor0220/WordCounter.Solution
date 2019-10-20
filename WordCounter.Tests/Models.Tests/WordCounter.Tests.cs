@@ -27,7 +27,7 @@ namespace Counter.Tests
 
             //Create a variable for the actual count by calling the method
             //Our method should be written to return an int and NOT be static
-            int actual = testRepeatCounter.WordCount();
+            int actual = testRepeatCounter.CountWord();
 
             //Assert
 
@@ -46,7 +46,7 @@ namespace Counter.Tests
 
             //Act
             int expected = 2;
-            int actual = testRepeatCounter.WordCount();
+            int actual = testRepeatCounter.CountWord();
 
             //Assert
 
@@ -63,7 +63,7 @@ namespace Counter.Tests
 
             //Act
             int expected = 2;
-            int actual = testRepeatCounter.WordCount();
+            int actual = testRepeatCounter.CountWord().TrimPunctuation();
 
             //Assert
 

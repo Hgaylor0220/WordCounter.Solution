@@ -13,11 +13,12 @@ namespace Counter.Models
             Sentence = sentence;
         }
         
-        public int WordCount()
+        public int CountWord()
         {
             int Count=0;
             UserWord.ToLower();
-
+           
+    
             foreach(var word in Sentence)
             {
                 if(word == word)
@@ -28,6 +29,36 @@ namespace Counter.Models
             }
                 return Count;
         }
+
+        static string TrimPunctuation(string Sentence)
+        {
+            int removeStartPunct =0;
+            for (int i=0; i < Sentence.Length; i++)
+            {
+                if (char.IsPunctuation(Sentence[i]))
+                {
+                    removeStartPunct ++;
+                }
+                
+            }
+            int removeEndPunct = 0;
+            for (int i = 0; i < Sentence.Length; i++)
+            {
+                if (char.IsPunctuation(Sentence[i]))
+                {
+                    removeEndPunct++;
+                }
+
+            }
+            if (removeStartPunct == Sentence.Length &&
+            removeEndPunct == Sentence.Length)
+            {
+                return " ";
+            }
+            return Sentence.Substring(removeStartPunct,
+            Sentence.Length - removeEndPunct - removeStartPunct);
+        }
+        
 
 
     }
